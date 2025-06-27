@@ -18,7 +18,7 @@ export const projects: Project[] = [
     id: "projet-2",
     title: "Site e-commerce TTYM Shop",
     description: "Plateforme complète avec paiement en ligne et gestion de stock",
-    image: "/images/ttym_shop.jpg",
+    image: "/images/ttymshop.jpg",
     link: "produit.php"
   },
   {

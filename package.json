@@ -2,12 +2,12 @@
   "name": "portfolio-yann-touassom",
   "version": "0.1.0",
   "private": true,
-  "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
+ "scripts": {
+  "dev": "next dev",
+  "build": "next build",
+  "start": "serve out",
+  "export": "next build && next export"
+},
   "dependencies": {
     "next": "15.3.4",
     "react": "^19.0.0",
@@ -21,6 +21,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.3.4",
+    "serve": "^14.2.4",
     "tailwindcss": "^4.1.11",
     "typescript": "^5"
   }

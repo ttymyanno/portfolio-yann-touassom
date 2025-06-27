@@ -26,7 +26,7 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
             <p className="mb-4">
-              Je suis un jeune étudiant en SERVICE INFORMATIQUE AUX ORGANISATIONS. Dynamique et travailleur, je mets beaucoup de rigueur dans tout ce que j'entreprends.
+              Je suis un jeune étudiant en Mastère expert en système informatique. Dynamique et travailleur, je mets beaucoup de rigueur dans tout ce que j'entreprends.
             </p>
             <p>
               Je souhaite obtenir à la fin de mon parcours mon diplôme d'ingénieur et d'acquérir les bases nécessaires à une bonne intégration professionnelle dans le secteur informatique.
