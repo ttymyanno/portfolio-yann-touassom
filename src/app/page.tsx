@@ -1,103 +1,55 @@
-import Image from "next/image";
+import Navbar from '@/components/Navbar';
+import ProjectCard from '@/components/ProjectCard';
+import { projects } from '@/data/projects';
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <>
+      <Navbar />
+      <div className="w3-padding-large" id="main">
+        <header className="w3-container w3-padding-32 w3-center w3-black" id="home">
+          <h1 className="w3-jumbo"><span className="w3-hide-small">Je suis</span> Yann Touassom.</h1>
+          <h3>Étudiant en BTS SIO deuxième année option SLAM</h3>
+          <p>Contrairement à d’autres BTS préparant à une fonction précise, le BTS SIO forme les étudiants à appréhender la diversité des impératifs informatiques au service du développement des entreprises...</p>
+          <img src="/images/photo_pro.JPG" alt="Profil" className="w3-image" width="992" height="1108" />
+        </header>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        <div className="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+          <h2 className="w3-text-light-grey">À propos</h2>
+          <hr style={{ width: '200px' }} className="w3-opacity" />
+          <p>Je suis un jeune étudiant en SERVICE INFORMATIQUE AUX ORGANISATIONS. Dynamique et travailleur, je mets beaucoup de rigueur dans tout ce que j’entreprends...</p>
+          
+          <h3 className="w3-padding-16 w3-text-light-grey">Mes compétences</h3>
+          {/* Barres de compétences */}
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+
+        <div className="w3-padding-64 w3-content" id="projects">
+          <h2 className="w3-text-light-grey">Mes projets</h2>
+          <hr style={{ width: '200px' }} className="w3-opacity" />
+          <div className="w3-row-padding" style={{ margin: '0 -16px' }}>
+            {projects.map(project => (
+              <ProjectCard key={project.id} project={project} />
+            ))}
+          </div>
+        </div>
+
+        <div className="w3-padding-64 w3-content w3-text-grey" id="veille">
+          <h2 className="w3-text-light-grey">Veille Technologique</h2>
+          <hr style={{ width: '200px' }} className="w3-opacity" />
+          <p><strong>L’observation des nanoparticules :</strong> Le laboratoire national de métrologie et d’essais (LNE) a dévoilé une nouvelle plateforme dédiée à la caractérisation des nanomatériaux...</p>
+          <img src="/images/nano.png" alt="Nanotechnologie" style={{ width: '100%' }} />
+        </div>
+
+        <div className="w3-padding-64 w3-content w3-text-grey" id="contact">
+          <h2 className="w3-text-light-grey">Me Contacter</h2>
+          <hr style={{ width: '200px' }} className="w3-opacity" />
+          <div className="w3-section">
+            <p><i className="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Palaiseau, France</p>
+            <p><i className="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: +33 7 52 04 88 75</p>
+            <p><i className="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: yann.touassom@gmail.com</p>
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
