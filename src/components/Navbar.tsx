@@ -1,46 +1,34 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Navbar() {
   return (
-    <>
-      <nav className="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
-        <img 
-          src="/images/photo_pro.jpg" 
-          className="w3-hover-opacity" 
-          style={{ width: '100%' }} 
-          alt="Profile" 
-        />
-        <Link href="#" className="w3-bar-item w3-button w3-padding-large w3-black">
-          <i className="fa fa-home w3-xxlarge"></i>
-          <p>HOME</p>
-        </Link>
-        <Link href="#about" className="w3-bar-item w3-button w3-padding-large w3-hover-black">
-          <i className="fa fa-user w3-xxlarge"></i>
-          <p>ABOUT</p>
-        </Link>
-        <Link href="#projects" className="w3-bar-item w3-button w3-padding-large w3-hover-black">
-          <i className="fa fa-eye w3-xxlarge"></i>
-          <p>PROJETS</p>
-        </Link>
-        <Link href="#veille" className="w3-bar-item w3-button w3-padding-large w3-hover-black">
-          <i className="fa fa-book w3-xxlarge"></i>
-          <p>VEILLE</p>
-        </Link>
-        <Link href="#contact" className="w3-bar-item w3-button w3-padding-large w3-hover-black">
-          <i className="fa fa-envelope w3-xxlarge"></i>
-          <p>CONTACT</p>
-        </Link>
-      </nav>
-
-      <div className="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
-        <div className="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
-          <Link href="#" className="w3-bar-item w3-button" style={{ width: '25% !important' }}>HOME</Link>
-          <Link href="#about" className="w3-bar-item w3-button" style={{ width: '25% !important' }}>ABOUT</Link>
-          <Link href="#projects" className="w3-bar-item w3-button" style={{ width: '25% !important' }}>PROJETS</Link>
-          <Link href="#veille" className="w3-bar-item w3-button" style={{ width: '25% !important' }}>VEILLE</Link>
-          <Link href="#contact" className="w3-bar-item w3-button" style={{ width: '25% !important' }}>CONTACT</Link>
+    <nav className="fixed top-0 w-full bg-black bg-opacity-80 z-50 py-4">
+      <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
+        <div className="flex items-center">
+          <div className="relative w-12 h-12 mr-4">
+            <Image 
+              src="/images/photo_pro.jpg" 
+              alt="Profile"
+              fill
+              className="rounded-full object-cover"
+            />
+          </div>
+          <span className="text-xl font-bold">Yann Touassom</span>
         </div>
+        
+        <div className="hidden md:flex space-x-8">
+          <Link href="#home" className="hover:text-blue-400 transition">Accueil</Link>
+          <Link href="#about" className="hover:text-blue-400 transition">À propos</Link>
+          <Link href="#projects" className="hover:text-blue-400 transition">Projets</Link>
+          <Link href="#veille" className="hover:text-blue-400 transition">Veille</Link>
+          <Link href="#contact" className="hover:text-blue-400 transition">Contact</Link>
+        </div>
+        
+        <button className="bg-gradient-to-r from-blue-500 to-purple-600 px-4 py-2 rounded-lg font-medium">
+          Télécharger CV
+        </button>
       </div>
-    </>
+    </nav>
   );
 }

@@ -1,5 +1,6 @@
 import { projects } from '@/data/projects';
 import { notFound } from 'next/navigation';
+import Image from 'next/image';
 
 export default function ProjectPage({ params }: { params: { id: string } }) {
   const project = projects.find(p => p.id === params.id);
@@ -8,7 +9,8 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
   return (
     <div className="w3-padding-64 w3-content">
       <h1 className="w3-text-light-grey">{project.title}</h1>
-      <img 
+      <Image 
+        className="w3-hover-opacity" 
         src={project.image} 
         style={{ width: '100%' }} 
         alt={project.title} 
