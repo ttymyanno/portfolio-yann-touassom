@@ -11,7 +11,7 @@ export default function Home() {
           <h1 className="w3-jumbo"><span className="w3-hide-small">Je suis</span> Yann Touassom.</h1>
           <h3>Étudiant en BTS SIO deuxième année option SLAM</h3>
           <p>Contrairement à d’autres BTS préparant à une fonction précise, le BTS SIO forme les étudiants à appréhender la diversité des impératifs informatiques au service du développement des entreprises...</p>
-          <img src="/images/photo_pro.JPG" alt="Profil" className="w3-image" width="992" height="1108" />
+          <img src="../images/photo_pro.JPG" alt="Profil" className="w3-image" width="992" height="1108" />
         </header>
 
         <div className="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
